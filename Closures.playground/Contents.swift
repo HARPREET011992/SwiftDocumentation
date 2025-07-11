@@ -35,11 +35,12 @@ calculate(operation: addTwoNumbers)  // Output: 8
 
 // MARK: - Example 3: Escaping Closure
 
+@MainActor
 func fetchAPI(completion: @escaping (Int) -> Void) {
     print("Fetching data...")
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
         let simulatedResult = 100
-        completion(simulatedResult)  // Closure escapes the function scope
+        completion(simulatedResult)
     }
 }
 
